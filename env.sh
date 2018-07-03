@@ -9,7 +9,7 @@ export GITHUB=git@github.schq.secious.com:Logrhythm
 export MYGITHUB=git@github.schq.secious.com:$GITHUBUSER
 
 export GOPATH=$PROJECTS/go
-export GOPATH=$GOPATH:$GOPATH/src/github.schq.secious.com/DataIndexer/Godeps/_workspace
+#export GOPATH=$GOPATH:$GOPATH/src/github.schq.secious.com/DataIndexer/Godeps/_workspace
 export GOBIN=$PROJECTS/go/bin
 export GO15VENDOREXPERIMENT=1
 

@@ -10,8 +10,8 @@ alias scp='scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 alias git=hub
 alias cdp="cd $PROJECTS"
 alias cdgo="cd $(firstGoPath)/src"
-alias cdgol="cd $(firstGoPath)/src/github.schq.secious.com/Logrhythm"
-alias cdgod="cd $(firstGoPath)/src/github.schq.secious.com/DataIndexer"
+alias cdgol="cd $(firstGoPath)/src/github.com/logrhythm"
+alias cdgot="cd $(firstGoPath)/src/github.com/tartale"
 alias up1='cd ..'
 alias up2='cd ../../'
 alias up3='cd ../../../'

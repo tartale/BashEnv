@@ -1,3 +1,4 @@
+#!/bin/bash
 
 function gdirty() (
   local repos=(${*:1})
@@ -66,6 +67,7 @@ function gbranch() (
     echo "usage:  gbranch branchName=<git branch> clean=<true | false> [Repo1, Repo2...]"
     return 1
   fi
+  unbranchable=()
   for dir in "${repos[@]}"
   do
   (
@@ -83,11 +85,16 @@ function gbranch() (
       then
         git pull main $branchName
       else
-        read -n1 -r -p "Press any key to continue..." key; echo
+        unbranchable+=("$dir")
       fi
     fi
   )
   done
+  if [ "${#unbranchable[@]}" -gt 0 ]
+  then
+    echo "Unable to branch the following directories:"
+    printf '%s\n' "${unbranchable[@]}"
+  fi
 )
 
 function gclone {
@@ -127,24 +134,7 @@ function gupdate {
   done
 }
 
-function gdelete {
-  if [ -z $1 ]
-  then
-    echo "usage:  gdelete <branch name> [Repo1, Repo2...]"
-    return 1
-  fi
-  pushd $PROJECTS > /dev/null
-  for dir in ${@:2}
-  do
-    pushd $dir > /dev/null
-      if [ -e .git ]
-      then
-        echo $dir
-        git checkout master
-        git pull main master
-        git branch -D $1
-      fi
-    popd > /dev/null
-  done
-  popd > /dev/null
-}
+thisScriptDir=$(realpath $(dirname $BASH_SOURCE))
+thisOS=$(uname)
+source "${thisScriptDir}/git-${thisOS}.sh"
+
