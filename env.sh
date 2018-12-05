@@ -1,5 +1,9 @@
 #!/bin/bash
 
+export HISTCONTROL=erasedups
+export HISTSIZE=
+export HISTFILESIZE=
+
 export PROJECTS=$HOME/Projects
 export PROTOROOT=$PROJECTS/Protobuffers/thirdParty/dist/protobuf
 export PROTOINCLUDE=$PROTOROOT/include

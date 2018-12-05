@@ -18,3 +18,5 @@ export CONSUL_BIND=$(ifconfig en0 | grep "inet " | grep -v 127.0.0.1 | cut -d\  
 export CONSUL_JOIN=10.3.1.100,10.3.1.99
 export CONSUL_CLIENT=true
 
+export COMPUTERNAME=DEATHSTAR-PMDP
+

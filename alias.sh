@@ -8,6 +8,7 @@ alias psu='ps auwx | grep tom.artale'
 alias ssh='ssh -t -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 alias scp='scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 alias git=hub
+alias gcw='git commit -vm WIP'
 alias cdp="cd $PROJECTS"
 alias cdgo="cd $(firstGoPath)/src"
 alias cdgol="cd $(firstGoPath)/src/github.com/logrhythm"
